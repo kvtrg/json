@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Songlist</title>
+	 <script   src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+	<script language="javascript" src="setlist.json"></script>
+	<script type="text/javascript" src="javascrip.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+	<script language="javascript">
+	$.get( "https://kvtrg.github.io/json/setlist.json",
+		function(songlist){
+			//Raw string display
+			strSong = JSON.stringify(songlist);
+			// document.write(strSong +"<br/>");
+			document.getElementById("rawString").innerHTML = strSong +"<br/>";
+
+			//User-friendly display
+			strHTML= "<ul>";
+			songlist.forEach(function(songlist) {
+				strHTML += "<li>" + songlist.title + "</li>";
+				strHTML += "<li>" + "Artist: " + songlist.artist + "</li>";
+				strHTML += "<li>" + "Genres: " + songlist.genres.join(", ") + "</li>";
+				strHTML += "<li>" + "Released: " + songlist.year + "</li>" + "</br>";
+			})
+			strHTML += "</ul>";
+			// document.write (strHTML);
+			document.getElementById("userFriendly").innerHTML = strHTML;
+
+	})
+
+</script>
+	<p id="rawString"></p>
+	<p id="userFriendly"></p>
+	<form name="filterForm">
+	<label for="genre">Choose a genre:</label>
+	<select name="genre" id="genre">
+		<option value="0">Select a genre</option>
+		<option value="dance">Dance</option>
+		<option value="dreampop">Dream Pop</option>
+		<option value="expop">Experimental Pop</option>
+		<option value="exrap">Experimental Rap</option>
+		<option value="folk">Folk</option>
+		<option value="funk">Funk</option>
+		<option value="hiphop">Hip Hop</option>
+		<option value="hyperpop">Hyperpop</option>
+		<option value="indie">Indie</option>
+		<option value="instrumental">Instrumental</option>
+		<option value="jazz">Jazz</option>
+		<option value="pop">Pop</option>
+		<option value="poprock">Pop Rock</option>
+		<option value="rb">R&B</option>
+		<option value="sswriter">Singer-Songwriter</option>
+		<option value="soul">Soul</option>
+	</select>
+	<input type="submit" value="Filter!" onsubmit="filter()">
+	</form>
+
+	<p id="result">
+
+	</p>
+
+	<script language="javascript">
+	$.get( "https://kvtrg.github.io/json/setlist.json",
+	function(songlist){
+	$("form").submit(function(event){
+		document.getElementById("result").innerHTML = "";
+		console.log('submitted!')
+		var matchVal = $("#genre option:selected").text();
+		console.log(matchVal)
+
+		var string = "";
+		for(var song in songlist){
+			if(songlist[song].genres.includes(matchVal)){
+				string = "<ul>";
+				string += "<li>" + songlist[song].title + "</li>";
+				string += "<li>" + "Artist: " + songlist[song].artist + "</li>";
+				string += "<li>" + "Genres: " + songlist[song].genres.join(", ") + "</li>";
+				string += "<li>" + "Released: " + songlist[song].year + "</li>" + "</br>";
+				string += "</ul>";
+				document.getElementById("result").innerHTML += string;
+			}
+		}
+		console.log(string);
+		event.preventDefault();
+	});
+	})
+	</script>
+
+
+</body>
+</html>
