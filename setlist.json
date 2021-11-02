@@ -1,0 +1,62 @@
+[
+	{
+	"title": "Oh Dove",
+	"artist": "Men I Trust",
+	"genres": ["Indie","Singer-Songwriter","Dream Pop"],
+	"year": 2021
+},
+	{
+	"title": "Pais Nublado",
+	"artist": "Helado Negro",
+	"genres": ["Indie","Singer-Songwriter","Folk"],
+	"year": 2019
+},
+	{
+	"title": "Good Ones",
+	"artist": "Charli XCX",
+	"genres": ["Hyperpop","Pop","Dance"],
+	"year": 2021
+},
+	{
+	"title": "Bonito Jingle",
+	"artist": "Kero Kero Bonito",
+	"genres": ["Hyperpop","Pop","Experimental Pop"],
+	"year": 2014
+},
+	{
+	"title": "async - ARCA Remix",
+	"artist": "Ryuichi Sakamoto and Arca",
+	"genres": ["Instrumental","Pop","Experimental Pop"],
+	"year": 2017
+},
+	{
+	"title": "Blaxploitation",
+	"artist": "Noname",
+	"genres": ["Experimental Rap","R&B","Hip Hop"],
+	"year": 2018
+},
+	{
+	"title": "Time Will Tell",
+	"artist": "Blood Orange",
+	"genres": ["R&B","Soul","Pop"],
+	"year": 2013
+},
+	{
+	"title": "Cherry-coloured Funk",
+	"artist": "Cocteau Twins",
+	"genres": ["Pop","Funk","Pop Rock"],
+	"year": 1990
+},
+	{
+	"title": "Visions",
+	"artist": "Cecile McLorin Salvant",
+	"genres": ["Soul","Singer-Songwriter","Jazz"],
+	"year": 2015
+},
+	{
+	"title": "How to Forgive",
+	"artist": "Tennis",
+	"genres": ["Indie","Pop Rock","Pop"],
+	"year": 2020
+}
+	]
